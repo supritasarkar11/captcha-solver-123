@@ -1,46 +1,46 @@
-# CAPTCHA Solver Web App
+# Captcha Solver Demo
 
-This is a simple, single-file responsive web application designed to demonstrate a CAPTCHA challenge and provide an interface for users to solve it. Built with vanilla JavaScript and styled using Tailwind CSS, it offers a clean and user-friendly experience.
+This project provides a simple, client-side demonstration of a Captcha interaction. It features a responsive HTML page built with Tailwind CSS, designed to display a captcha image and allow users to input their solution. While it doesn't include a real server-side captcha solving mechanism, it allows for loading custom captcha images via URL parameters and offers a basic verification for a default image.
 
 ## Features
 
-*   **Responsive Design**: Adapts to various screen sizes, from mobile to desktop.
-*   **Dynamic Image Loading**: Loads CAPTCHA images from a specified URL parameter or defaults to a local sample.
-*   **User Input Interface**: Provides an input field for users to enter the CAPTCHA text.
-*   **Basic Validation**: For the default `sample.png`, it validates against a pre-defined solution. For dynamic URLs, it simulates a submission process.
+*   **Responsive Design:** Optimized for various screen sizes using Tailwind CSS.
+*   **Dynamic Image Loading:** Load captcha images using a `?url=` query parameter (e.g., `index.html?url=https://example.com/captcha.png`).
+*   **Default Captcha:** Displays a `sample.png` image by default.
+*   **Client-Side Verification:** Provides immediate feedback for the default captcha image ("ADUR3"). For custom images, it acknowledges the input but cannot perform server-side verification.
+*   **Modern UI:** Clean and interactive interface.
 
 ## How to Use
 
-1.  **Save the file**: Save the provided `index.html` and `sample.png` in the same directory.
-2.  **Open `index.html`**: Open the `index.html` file in your web browser.
+### Running Locally
 
-### Loading Custom CAPTCHA Images
+1.  Save the `index.html`, `README.md`, `LICENSE`, and `sample.png` files into the same directory.
+2.  Open `index.html` in your web browser.
 
-You can specify a custom image URL using the `url` query parameter in the browser's address bar.
+### Loading a Custom Captcha Image
 
-**Example:**
-`index.html?url=https://example.com/path/to/your/captcha.png`
+You can specify a captcha image URL directly in your browser's address bar or using the input field on the page:
 
-When a custom URL is provided, the application will display the image but will not perform automated validation (as real-time OCR for arbitrary images is beyond the scope of a simple client-side HTML file). It will simply confirm the user's submission.
+*   **Default (using `sample.png`):**
+    `file:///path/to/your/project/index.html`
+*   **With a custom image:**
+    `file:///path/to/your/project/index.html?url=https://example.com/your-captcha-image.png`
+    (Replace `https://example.com/your-captcha-image.png` with the actual URL of your captcha image.)
 
-### Default CAPTCHA
+### Solving the Captcha
 
-If no `url` parameter is provided, the app will load `sample.png` as the CAPTCHA image. The expected solution for `sample.png` is `ADURB` (case-insensitive for validation purposes).
+1.  Observe the characters displayed in the captcha image.
+2.  Type the characters into the input field.
+3.  Click the "Submit" button.
+
+For the default `sample.png` image, the correct solution is **ADUR3**.
 
 ## Technologies Used
 
-*   **HTML5**: Structure of the web page.
-*   **Tailwind CSS (CDN)**: For rapid and responsive styling.
-*   **Vanilla JavaScript**: For dynamic content loading and interaction logic.
+*   **HTML5:** Structure of the web page.
+*   **Tailwind CSS:** For styling and responsive design.
+*   **JavaScript:** For dynamic behavior, image loading, and client-side interaction.
 
-## Project Structure
+## License
 
-```
-.
-├── index.html
-└── sample.png
-```
-
-## Disclaimer
-
-This application is a demonstration for educational and illustrative purposes. A real-world CAPTCHA solver typically involves robust server-side image processing (OCR) and security considerations that are not implemented here.
+This project is open-sourced under the MIT License. See the `LICENSE` file for more details.
